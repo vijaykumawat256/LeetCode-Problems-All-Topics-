@@ -1,7 +1,7 @@
 class Solution {
     public boolean isValid(String s) {
         
-        if(s.length()==1) return false;
+
         
         Stack<Character> st=new Stack<>();
         
