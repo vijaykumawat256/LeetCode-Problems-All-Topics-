@@ -34,7 +34,7 @@ class Solution {
 
     } 
         
-        boolean res =  (st.isEmpty()) ?  true :  false;
-        return res;
+        return (st.isEmpty()) ?  true :  false;
+    
     }
 }
