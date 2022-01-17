@@ -34,12 +34,8 @@ class Solution {
             }
 
     } 
-        if(st.size()==0){
-            return true;
-        }
-        else{
-            return false; 
-        }
+        boolean res =  (st.isEmpty()) ?  true :  false;
+        return res;
       
     }
 }
