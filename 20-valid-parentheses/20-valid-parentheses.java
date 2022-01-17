@@ -1,8 +1,6 @@
 class Solution {
     public boolean isValid(String s) {
-        
 
-        
         Stack<Character> st=new Stack<>();
         
         for(int i=0; i<s.length(); i++){
@@ -34,7 +32,7 @@ class Solution {
 
     } 
         
-        boolean res =  (st.isEmpty()) ?  true :  false;
-        return res;
+        return (st.isEmpty()) ?  true :  false;
+        
     }
 }
