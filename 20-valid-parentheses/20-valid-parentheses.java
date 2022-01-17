@@ -32,7 +32,7 @@ class Solution {
 
     } 
         
-        return (st.isEmpty()) ?  true :  false;
-        
+        boolean res =  (st.isEmpty()) ?  true :  false;
+        return res;
     }
 }
