@@ -4,16 +4,14 @@ class Solution {
         HashMap<Character,Character> hp = new HashMap<>();
         
         
-        HashSet<Character> set1  = new HashSet<>();
-        HashSet<Character> set2 = new HashSet<>();  
+        Set<Character> set1  = new HashSet<>();
+        Set<Character> set2 = new HashSet<>();  
         
         if(s.length() != t.length()){
            return false; 
-        } 
-        
+        }  
         
         for(int i=0; i<s.length(); i++) {
-            
           
             set1.add(s.charAt(i));
             set2.add(t.charAt(i));
@@ -25,7 +23,7 @@ class Solution {
                char curWord = hp.get(s.charAt(i));
                 if(curWord!=(t.charAt(i))) return false;
             }
-        }
+        } 
         
         return set1.size()==set2.size() ? true : false;
     }
