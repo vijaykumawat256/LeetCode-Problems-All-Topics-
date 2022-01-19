@@ -3,7 +3,6 @@ class Solution {
     public boolean isIsomorphic(String s, String t) {
         HashMap<Character,Character> hp = new HashMap<>();
         
-        
         Set<Character> set1  = new HashSet<>();
         Set<Character> set2 = new HashSet<>();  
         
@@ -18,10 +17,12 @@ class Solution {
             
             if(!hp.containsKey(s.charAt(i))) {
                 hp.put(s.charAt(i), t.charAt(i));
-            } else {
+            } 
+            
+            else {
                 
-               char curWord = hp.get(s.charAt(i));
-                if(curWord!=(t.charAt(i))) return false;
+               char ch = hp.get(s.charAt(i));
+                if(ch!=(t.charAt(i))) return false;
             }
         } 
         
