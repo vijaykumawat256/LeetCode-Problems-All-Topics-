@@ -22,13 +22,7 @@ class Solution {
           
             
     }
-        System.out.println(str1);
-        System.out.println(str2);
-          if(str1.equals(str2)){
-            return true;
-        }
-        else
-            
-        return false;
+      return str1.equals(str2) ? true : false;
+        
     }
 }
