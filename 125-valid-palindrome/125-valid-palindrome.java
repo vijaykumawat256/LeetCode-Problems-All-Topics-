@@ -22,7 +22,11 @@ class Solution {
           
             
     }
-      return str1.equals(str2) ? true : false;
-        
+          if(str1.equals(str2)){
+            return true;
+        }
+        else
+            
+        return false;
     }
 }
