@@ -5,7 +5,7 @@ class Solution {
         if(arr.length<3){
             return false;
         }
-       while(i<arr.length&& i+1<arr.length &&arr[i]<arr[i+1] && arr[arr.length-1]<arr[arr.length-2]){
+       while(i<arr.length&& i+1<arr.length && arr[i]<arr[i+1] && arr[arr.length-1]<arr[arr.length-2]){
   
            i++;
        }
