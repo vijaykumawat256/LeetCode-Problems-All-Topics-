@@ -10,11 +10,11 @@ class Solution {
             int area= top*(end-start);
             maxm=Math.max(maxm,area);
             
-            if(height[start]>height[end]){
-                end--;
+            if(height[start]<height[end]){
+                start++;
             }
             else
-                start++;
+                end--;
             
         }
         return maxm;
