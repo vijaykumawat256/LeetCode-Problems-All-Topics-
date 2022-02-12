@@ -1,13 +1,9 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
-        for(int i=0;i<nums.length-1;i++){
-            if(nums[i]!=nums[i+1]){
-                return nums[i];
-            }
-            i++;
+      int xor =0;
+        for(int i=0;i<nums.length;i++){
+            xor=xor^nums[i];
         }
-        return nums[nums.length-1];
+        return xor;
     }
 }
