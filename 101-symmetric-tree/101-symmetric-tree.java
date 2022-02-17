@@ -15,35 +15,39 @@
  */
 class Solution {
     public boolean isSymmetric(TreeNode root) {
-        
-        return isSameTree(root, root);
-    }
-    
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        
-        if(p == null && q == null){
+        boolean res=isSameTree(root,root);
+        if(res==true){
             return true;
         }
-        else if(p == null){
+        else{
             return false;
         }
-        else if(q == null){
-            return false;
-        }
-        
-        if(p.val != q.val)
-            return false;
-        
-        boolean left = isSameTree(p.left, q.right);
-        if(left == false){
-            return false;
-        }
-        boolean right = isSameTree(p.right, q.left);
-        if(right == false){
-            return false;
-        }
-        
-        return true;
     }
     
+        public boolean isSameTree(TreeNode p, TreeNode q) {
+        
+        if(p==null && q==null){
+            return true;
+        }
+        else if(p==null){
+            return false;
+        }
+        else if(q==null){
+            return false;
+        }
+        
+        if(p.val!=q.val){
+            return false;
+        }
+        
+        boolean left= isSameTree(p.left,q.right);
+        if(left==false){
+            return false;
+        }
+        boolean right= isSameTree(p.right,q.left);
+        if(right==false){
+            return false;
+        }
+        return true;
+    }
 }
