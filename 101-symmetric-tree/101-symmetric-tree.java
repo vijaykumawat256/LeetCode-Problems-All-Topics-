@@ -15,13 +15,8 @@
  */
 class Solution {
     public boolean isSymmetric(TreeNode root) {
-        boolean res=isSameTree(root,root);
-        if(res==true){
-            return true;
-        }
-        else{
-            return false;
-        }
+       return isSameTree(root,root);
+       
     }
     
         public boolean isSameTree(TreeNode p, TreeNode q) {
