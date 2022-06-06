@@ -1,40 +1,66 @@
 class Solution {
     public boolean isValid(String s) {
-        
-        if(s.length()==1) return false;
-        
         Stack<Character> st=new Stack<>();
+        if(s.length()==1) return false;
+        for(int i=0;i<s.length();i++){
+            
+            char ch=s.charAt(i);
+            
+            if(ch=='('||ch=='{'||ch=='['){
+                st.push(ch);
+            }
+            else if(ch==')'){
+                if(st.size()==0){
+                    return false;
+                }
+                if(st.peek()=='('){
+                    st.pop(); 
         
-        for(int i=0; i<s.length(); i++){
-
-            if(s.charAt(i)==')'){
-                if(st.isEmpty()) return false;
+                    
+                }
+                else{
+                     return false;
+                }
                 
-                if(st.peek()=='(')
-                    st.pop();
-                else return false;
             }
-             else if(s.charAt(i)==']'){
-                 if(st.isEmpty()) return false;
+            else if(ch=='}'){
+                if(st.size()==0){
+                  
+                    return false;
+                }
+                if(st.peek()=='{'){
+                   st.pop(); 
+                    
+                }
+                else{
+                    return false;
+                }
                 
-                 if(st.peek()=='[')
-                    st.pop();
-                 else return false;
             }
-             else if(s.charAt(i)=='}'){
-                 if(st.isEmpty()) return false;
+            else if(ch==']'){
+                if(st.size()==0){
+                    
+                    return false;
+                }
+                if(st.peek()=='['){
+                    st.pop(); 
+                   
+                    
+                }
+                else{
+                     
+                    return false;
+                }
                 
-                 if(st.peek()=='{')
-                    st.pop();
-                 else return false;
             }
-            else{
-               st.push(s.charAt(i)); 
-            }
-
-    } 
+        }
+        if(st.size()==0){
+            return true;
+        }
+        else{
+            return false;
+        }
         
-        return (st.isEmpty()) ?  true :  false;
-    
     }
+    
 }
