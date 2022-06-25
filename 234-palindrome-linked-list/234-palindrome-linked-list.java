@@ -10,43 +10,80 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        ListNode fast=head;
-        ListNode slow=head;
-        ListNode mid=null;
         
-        while(fast!=null && fast.next!=null){
-            slow=slow.next;
-            fast=fast.next.next;
-            
-        }
-        if(fast!=null){
-            mid=slow.next;
-            
-        }
-        else{
-            mid=slow;
-        }
         
-        ListNode prev=null;
-        ListNode nxt=null;
-         while(mid!=null){
-             nxt=mid.next;
-             mid.next=prev;
-             prev=mid;
-             mid=nxt;
-             
-         }
-        while(prev!=null){
-            if(prev.val!=head.val){
+//         if(head.next==null){
+//             return true;
+//         }
+        
+//         ListNode slow=head;
+//         ListNode fast=head;
+        
+//         while(fast!=null && fast.next!=null){
+//             slow=slow.next;
+//             fast=fast.next.next;
+//         }
+        
+//         ListNode curr=slow;
+//         ListNode prev=null;
+//         ListNode next=curr.next;
+        
+//         while(curr!=null && curr.next!=null){
+//             curr.next=prev;
+            
+//             prev=curr;
+//             curr=next;
+//             next=next.next;
+//         }
+//         ListNode temp=head;
+//         while(curr!=null){
+//             if(curr.val==temp.val){
+//                 curr=curr.next;
+//                 temp=temp.next;
+//             }
+//             else{
+//                 return false;
+//             }
+//         }
+        
+        
+        
+        
+        
+        List<Integer> ls=new ArrayList<>();
+        ListNode temp=head;
+        while(temp!=null){
+            ls.add(temp.val);
+            temp=temp.next;
+        }
+        int end=ls.size()-1;
+        int str=0;
+        
+        while(str<end){
+            if(ls.get(str)!=ls.get(end)){
                 return false;
             }
-            prev=prev.next;
-            head=head.next;
-            
-            }
-        return true;
-        
+            str++;
+            end--;
         }
-       
-
+        
+        
+        
+//         while(temp2!=null && temp2.next!=null){
+//             if(temp1.val==temp2.val){
+//                 temp2=temp2.next;
+//                 temp1=temp1.next;
+                
+//             }
+//             else{
+//                 return false;
+//             }
+//         }
+        
+        
+        
+        
+        
+        return true;
     }
+}
