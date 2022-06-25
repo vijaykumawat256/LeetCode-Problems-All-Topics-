@@ -12,60 +12,71 @@ class Solution {
     public boolean isPalindrome(ListNode head) {
         
         
-//         if(head.next==null){
-//             return true;
-//         }
-        
-//         ListNode slow=head;
-//         ListNode fast=head;
-        
-//         while(fast!=null && fast.next!=null){
-//             slow=slow.next;
-//             fast=fast.next.next;
-//         }
-        
-//         ListNode curr=slow;
-//         ListNode prev=null;
-//         ListNode next=curr.next;
-        
-//         while(curr!=null && curr.next!=null){
-//             curr.next=prev;
-            
-//             prev=curr;
-//             curr=next;
-//             next=next.next;
-//         }
-//         ListNode temp=head;
-//         while(curr!=null){
-//             if(curr.val==temp.val){
-//                 curr=curr.next;
-//                 temp=temp.next;
-//             }
-//             else{
-//                 return false;
-//             }
-//         }
-        
-        
-        
-        
-        
-        List<Integer> ls=new ArrayList<>();
-        ListNode temp=head;
-        while(temp!=null){
-            ls.add(temp.val);
-            temp=temp.next;
+        if(head.next==null){
+            return true;
         }
-        int end=ls.size()-1;
-        int str=0;
         
-        while(str<end){
-            if(ls.get(str)!=ls.get(end)){
+        ListNode slow=head;
+        ListNode fast=head;
+        
+        while(fast.next!=null && fast.next.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        
+        if(fast!=null){
+            slow=slow.next;
+        }
+        
+        ListNode revHead= reversed(slow);
+        
+        ListNode temp=head;
+        while(revHead!=null){
+            if(revHead.val==temp.val){
+                revHead=revHead.next;
+                temp=temp.next;
+            }
+            else{
                 return false;
             }
-            str++;
-            end--;
+            
+            
         }
+        return true;
+    }
+    public ListNode reversed(ListNode head){
+        
+        ListNode prev=null;
+        while(head!=null){
+            ListNode next=head.next;
+            head.next=prev;
+            prev=head;
+            head=next;
+          
+        }
+            return prev;
+        }
+        
+        
+        
+        
+        
+//         List<Integer> ls=new ArrayList<>();
+//         ListNode temp=head;
+//         while(temp!=null){
+//             ls.add(temp.val);
+//             temp=temp.next;
+//         }
+//         int end=ls.size()-1;
+//         int str=0;
+        
+//         while(str<end){
+//             if(ls.get(str)!=ls.get(end)){
+//                 return false;
+//             }
+//             str++;
+//             end--;
+//         }
         
         
         
@@ -84,6 +95,5 @@ class Solution {
         
         
         
-        return true;
-    }
+
 }
